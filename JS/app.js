@@ -13,14 +13,14 @@ function readTextFile(file, callback) {
 function getNewWords(){
 
 //Parse JSON file into an object and access all words, then get a random first word
-readTextFile("../Text/Words.json", function(text){
+readTextFile("./Text/Words.json", function(text){
     let firstWord = JSON.parse(text);
     let randomFirstWord = firstWord.data[Math.floor(Math.random()*firstWord.data.length)];
     document.getElementById("firstWord").innerHTML = randomFirstWord;
 });
 
 //Get Second Word
-readTextFile("../Text/Words2.json", function(text){
+readTextFile("./Text/Words2.json", function(text){
     const secondWord = JSON.parse(text);
     let randomSecondWord = secondWord.data[Math.floor(Math.random()*secondWord.data.length)];
     document.getElementById("secondWord").innerHTML = randomSecondWord;
