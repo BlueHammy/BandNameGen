@@ -10,6 +10,8 @@ function readTextFile(file, callback) {
     jsonFile.send(null);
 }
 
+function getNewWords(){
+
 //Parse JSON file into an object and access all words, then get a random first word
 readTextFile("../Text/Words.json", function(text){
     let firstWord = JSON.parse(text);
@@ -24,7 +26,7 @@ readTextFile("../Text/Words2.json", function(text){
     document.getElementById("secondWord").innerHTML = randomSecondWord;
     
 });
-
+}
 
 //Set a random background
 const setBackground = () => {
@@ -33,4 +35,11 @@ const setBackground = () => {
     color.innerHTML = "#" + randomColor;
   }
 
+  //init
+  getNewWords(); 
   setBackground();
+
+  function buttonClick(){
+    getNewWords();
+    setBackground();
+  }
